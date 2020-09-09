@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="../bootstrap-4.0.0-dist/css/bootstrap.min.css"
+    /> -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Company Personel</title>
+  </head>
+  <body class='w-100'id="page">
+    
+
+    <!------------------------------ Main content --------------------->
+
+    <div class="container-fluid p-0 w-100" id="main">
+      
+      <!-- Modal Addnew Person -->
+      <div class="container w-98">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="modal fade" id="addModal">
+              <div class="modal-dialog modal-md">
+                <div class="modal-content panel-bodyModal opacityFull">
+                  <div class="modal-header title-add">
+                    <h3>Enter the new employee</h3>
+                  </div>
+                  <div class="modal-body p-0">
+                    <!-- Body -->
+                    <form id="form" class="form p-3" name='form' method="POST">
+                      <div class="form-control">
+                        <label for="first-name">First Name</label>
+                        <input
+                          type="text"
+                          placeholder="First Name"
+                          id="first-name"
+                          name='firstName'
+                        />
+                        
+                        <small>Error message</small>
+                      </div>
+                      <div class="form-control">
+                        <label for="last-name">Last Name</label>
+                        <input
+                          type="text"
+                          placeholder="Last Name"
+                          id="last-name"
+                          name="lastName"
+                        />
+                        
+                        <small>Error message</small>
+                      </div>
+                      <div class="form-control">
+                        <label for="email">Email</label>
+                        <input
+                          type="text"
+                          placeholder="Email"
+                          id="email"
+                          name="email"
+                        />
+                       
+                        <small>Error message</small>
+                      </div>
+                      
+                      <div class="form-control">
+                        <label for="job-department">Department</label>
+                        <select id="job-department">
+                      </select>
+                        
+                        <small>Error message</small>
+                      </div>
+
+                      <div class="form-control">
+                        <label for="job-location">Location</label>
+                        <select id="job-location">
+                      </select>
+                        
+                        <small>Error message</small>
+                      </div>
+                      <button class='btn btn-secondary modal-btn submit-btn-form m-1'>Submit</button>
+                      <button type="button" class="btn btn-secondary modal-btn m-1" data-dismiss="modal" >Close</button>
+                    
+                    </form>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!--------------------------- Chart --------------------------->
+      <div class="container">
+        <div class="row pt-3">
+          <div class="col-lg-12 w-100">
+            <div class="panel panel-default">
+              <div class="panel-body p-t-0 navBar">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    id="example-input1-group2"
+                    name="example-input1-group2"
+                    class="search form-control p-1"
+                    placeholder="Search"
+                  />
+                  <span class="input-group-btn">
+                    <button
+                      type="button"
+                      class="btn btn-effect-ripple btn-primary search-btn"
+                    >
+                      <i class="fa fa-search"></i>
+                    </button>
+                    <a
+                      href="#"
+                      class="btn btn-info add-employee-btn"
+                      data-toggle="modal"
+                      data-target="#addModal"
+                      >Add new employee</a
+                    >
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row"  id='contact-list'>
+          
+         
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ------------------------------- Edit Modal --------------------- -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="modal fade" id="addModal-edit">
+            <div class="modal-dialog modal-md">
+              <div class="modal-content panel-bodyModal opacityFull">
+                <div class="modal-header title-edit">
+                  <h3>Update employee</h3>
+                </div>
+                <div class="modal-body p-0">
+                  <!-- Body -->
+                  <form id="form-edit" class="form p-3">
+                    <div class="form-control">
+                      <label for="first-name-edit">First Name</label>
+                      <input
+                        type="text"
+                        placeholder="First Name"
+                        id="first-name-edit"
+                      />
+                      
+                      <small>Error message</small>
+                    </div>
+                    <div class="form-control">
+                      <label for="last-name-edit">Last Name</label>
+                      <input
+                        type="text"
+                        placeholder="Last Name"
+                        id="last-name-edit"
+                      />
+                      
+                      <small>Error message</small>
+                    </div>
+                    <div class="form-control">
+                      <label for="email-edit">Email</label>
+                      <input
+                        type="text"
+                        placeholder="Email"
+                        id="email-edit"
+                      />
+                     
+                      <small>Error message</small>
+                    </div>
+                    
+                    <div class="form-control">
+                      <label for="job-department-edit">Department</label>
+                      <select id="job-department-edit">
+                    </select>
+
+                    
+                      
+                      <small>Error message</small>
+                    </div>
+                    <div class="form-control">
+                      <label for="job-location-edit">Location</label>
+                      <select id="job-location-edit">
+                    </select>
+                      
+                      <small>Error message</small>
+                    </div>
+                    <div class="btn-group w-100" role="group">
+                      <button class='modal-btn m-1 btn-info' id="submit-edit">Submit</button>
+                      <button type="button" class="btn btn-secondary btn-info modal-btn m-1" data-dismiss="modal" >Close</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content panel-bodyModal">
+              <div class="modal-header">
+                  Delete
+              </div>
+              <div class="modal-body">
+                  Are you sure you you want to delete this employee?
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default btn-info" data-dismiss="modal">Cancel</button>
+                  <a class="btn btn-danger btn-ok" data-dismiss="modal">Delete</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  </div>
+
+    <!------------------------------------------------ Script ---------------------------------------------->
+    <!------------------------------------------------ Script ---------------------------------------------->
+    <!------------------------------------------------ Script ---------------------------------------------->
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <!-- <script src="../bootstrap-4.0.0-dist/js/bootstrap.min.js"></script> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Our script -->
+    <script src="./js/script.js"></script>
+    <!-- Org Chart -->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </body>
+</html>
